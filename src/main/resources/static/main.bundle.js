@@ -340,7 +340,7 @@ var TaskEditPageComponent = (function () {
         });
     };
     TaskEditPageComponent.prototype.onSubmit = function () {
-        this.todoService.adicionar(this.todoForm.get('description').value, this.todoForm.get('priority').value, Boolean(this.todoForm.get('completed').value));
+        this.todoService.create(this.todoForm.get('description').value, this.todoForm.get('priority').value, Boolean(this.todoForm.get('completed').value));
         this.router.navigate(['/tasks']);
     };
     return TaskEditPageComponent;
@@ -455,7 +455,7 @@ var TodoService = (function () {
     TodoService.prototype.list = function () {
         return this.todos;
     };
-    TodoService.prototype.adicionar = function (description, priority, completed) {
+    TodoService.prototype.create = function (description, priority, completed) {
         this.todos.push(new __WEBPACK_IMPORTED_MODULE_1__models_todo__["a" /* Todo */](description, priority, completed));
     };
     return TodoService;
